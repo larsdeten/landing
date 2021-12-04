@@ -10,18 +10,14 @@ class ApiController extends Controller
 
     protected $httpClient = null;
 
-    public function get($num)
+    public function get($params)
     {
-        $data['num'] = (int) $num;
-        return (new Exchange)->getData($data);
+        return (new Exchange)->getData($params);
     }
 
-    public function set($path)
+    public function set($params)
     {
-        $data = [
-            'url' => $path,
-        ];
-        return (new Exchange)->setData($data);
+        return (new Exchange)->setData($params);
     }
 
 }

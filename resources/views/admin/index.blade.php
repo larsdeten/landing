@@ -25,6 +25,7 @@
         <th>ID</th>
         <th>Page</th>
         <th>Date</th>
+        <th>Count</th>
     </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@
         <td>{{$data['id']}}</td>
         <td>{{$data['url']}}</td>
         <td>{{ date('D M Y, H:i:s', strtotime($data['created_at'])) }}</td>
+        <td>{{ $data['count'] }}</td>
     </tr>
     @endforeach
     </tbody>

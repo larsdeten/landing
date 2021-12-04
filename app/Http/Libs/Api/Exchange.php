@@ -21,16 +21,15 @@ class Exchange extends Base
             env('API_HOST') . '/api/v1',
             $this->prepare_params('ApiProcedure@getData', $params)
         );
-
         if ($response->ok()) {
             $result = $response->json();
             if (!empty($result['result']['success']) && ($result['result']['success'] == true)) {
                 return $result['result']['data'];
             }
         } else {
-            return false;
+            return ['success' => false];
         }
-        return false;
+        return ['success' => false];
     }
     public function setData($params)
     {
@@ -44,9 +43,9 @@ class Exchange extends Base
                 return true;
             }
         } else {
-            return false;
+            return ['success' => false];
         }
-        return false;
+        return ['success' => false];
     }
 
 
